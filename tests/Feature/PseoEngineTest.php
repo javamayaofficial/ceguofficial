@@ -364,4 +364,17 @@ class PseoEngineTest extends TestCase
             ->assertOk()
             ->assertSee('les-privat-matematika/bandung/cicendo/pajajaran', false);
     }
+
+    public function test_template_kerangka_can_be_imported_from_resources_folder(): void
+    {
+        $admin = \App\Models\User::factory()->create();
+
+        $response = $this->actingAs($admin)->post(route('admin.templates.import'));
+
+        $response->assertRedirect();
+        $response->assertSessionHas('status');
+        $this->assertGreaterThanOrEqual(12, \App\Models\Template::count());
+        $this->assertDatabaseHas('templates', ['name' => 'AIDA — Attention, Interest, Desire, Action']);
+        $this->assertDatabaseHas('templates', ['name' => 'FSP — Fakta, Story, Penawaran']);
+    }
 }

@@ -107,6 +107,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('templates/{template}/edit', [TemplateController::class, 'edit'])->name('templates.edit');
     Route::put('templates/{template}', [TemplateController::class, 'update'])->name('templates.update');
     Route::post('templates/{template}/activate', [TemplateController::class, 'activate'])->name('templates.activate');
+    Route::post('templates/import-kerangka', [TemplateController::class, 'importKerangka'])->name('templates.import');
     Route::delete('templates/{template}', [TemplateController::class, 'destroy'])->name('templates.destroy');
     Route::post('templates/preview', [TemplateController::class, 'preview'])->name('templates.preview');
 

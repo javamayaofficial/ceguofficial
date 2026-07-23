@@ -9,6 +9,29 @@
         </div>
     </div>
 
+    <div class="card a-ok">
+        <div class="row">
+            <div style="flex:1;min-width:260px">
+                <h3 style="margin:0 0 4px">Template Kerangka Siap Pakai</h3>
+                <p class="muted" style="margin:0;font-size:.88rem">
+                    12 kerangka copywriting (AIDA, PAS, BAB, 4P, QUEST, TOFU, MOFU, BOFU, VSL,
+                    Advertorial, Long Form, FSP). Semuanya memakai token standar sehingga
+                    variasi konten dan kata kunci tetap berfungsi.
+                </p>
+            </div>
+            <form method="POST" action="{{ route('admin.templates.import') }}">
+                @csrf
+                <button class="btn green" onclick="return confirm('Muat template kerangka? Yang sudah ada akan dilewati, template aktif tidak terganggu.')">
+                    Muat 12 Template Kerangka
+                </button>
+            </form>
+        </div>
+        <p class="muted" style="margin:10px 0 0;font-size:.83rem">
+            Semua dimuat dalam keadaan <strong>nonaktif</strong> sehingga template yang sedang dipakai tidak terganggu.
+            Aman diulang: yang sudah ada tidak akan diduplikasi.
+        </p>
+    </div>
+
     <div class="card">
         <table>
             <thead><tr><th>Nama</th><th>Status</th><th>Diperbarui</th><th></th></tr></thead>

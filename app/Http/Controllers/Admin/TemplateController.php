@@ -53,6 +53,73 @@ class TemplateController extends Controller
         return redirect()->route('admin.templates.edit', $template)->with('status', 'Template disimpan.');
     }
 
+    /**
+     * Muat template kerangka dari resources/templates/*.html ke database.
+     *
+     * Aman diulang: nama yang sudah ada dilewati, tidak menimpa template yang
+     * pernah disunting manual di panel admin.
+     */
+    public function importKerangka()
+    {
+        $dir = resource_path('templates');
+        if (! is_dir($dir)) {
+            return back()->withErrors(['import' => 'Folder resources/templates tidak ditemukan di server.']);
+        }
+
+        $berkas = glob($dir . '/*.html') ?: [];
+        if ($berkas === []) {
+            return back()->withErrors(['import' => 'Tidak ada berkas template di resources/templates.']);
+        }
+
+        $label = [
+            '01-aida' => 'AIDA — Attention, Interest, Desire, Action',
+            '02-pas' => 'PAS — Problem, Agitate, Solution',
+            '03-bab' => 'BAB — Before, After, Bridge',
+            '04-4p' => '4P — Promise, Picture, Proof, Push',
+            '05-quest' => 'QUEST — Qualify, Understand, Educate, Stimulate, Transition',
+            '06-tofu' => 'TOFU — Awareness (audiens baru)',
+            '07-mofu' => 'MOFU — Pertimbangan',
+            '08-bofu' => 'BOFU — Siap membeli / closing',
+            '09-vsl' => 'VSL — Video Sales Letter',
+            '10-advertorial' => 'Advertorial — Soft selling ala artikel',
+            '11-longform' => 'Long Form — Penjualan mendalam',
+            '12-fsp' => 'FSP — Fakta, Story, Penawaran',
+        ];
+
+        $dibuat = 0;
+        $dilewati = 0;
+
+        foreach ($berkas as $path) {
+            $slug = pathinfo($path, PATHINFO_FILENAME);
+            $nama = $label[$slug] ?? ucwords(str_replace('-', ' ', $slug));
+
+            if (Template::where('name', $nama)->exists()) {
+                $dilewati++;
+                continue;
+            }
+
+            $isi = (string) file_get_contents($path);
+            if (trim($isi) === '') {
+                continue;
+            }
+
+            Template::create([
+                'name' => $nama,
+                'content' => $isi,
+                'is_active' => false,
+            ]);
+            $dibuat++;
+        }
+
+        $pesan = "{$dibuat} template kerangka dimuat.";
+        if ($dilewati > 0) {
+            $pesan .= " {$dilewati} dilewati karena sudah ada.";
+        }
+        $pesan .= ' Semuanya nonaktif — tekan Aktifkan pada yang ingin dipakai.';
+
+        return back()->with('status', $pesan);
+    }
+
     public function activate(Template $template)
     {
         $template->makeActive();
