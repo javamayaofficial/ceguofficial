@@ -31,7 +31,7 @@ class AdminUiRegressionTest extends TestCase
         $response = $this->get('/login');
 
         $response->assertOk();
-        $response->assertSee('DAYA AI', false);
+        $response->assertSee('CEGU', false);
         $response->assertDontSee('CEGU pSEO Engine', false);
     }
 

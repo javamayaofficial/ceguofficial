@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login — {{ config('daya.engine_name', 'DAYA AI') }}</title>
+    <title>Login — {{ config('daya.engine_name', 'CEGU') }}</title>
     <style>
         body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#0f172a;color:#0f172a;display:flex;min-height:100vh;align-items:center;justify-content:center}
         .box{background:#fff;border-radius:14px;padding:32px;width:340px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -18,7 +18,7 @@
 <body>
     <form class="box" method="POST" action="{{ route('login') }}">
         @csrf
-        <h1>{{ config('daya.engine_name', 'DAYA AI') }}</h1>
+        <h1>{{ config('daya.engine_name', 'CEGU') }}</h1>
         <div class="sub">Masuk ke panel admin</div>
         @if($errors->any())<div class="err">{{ $errors->first() }}</div>@endif
         <label>Email</label>
