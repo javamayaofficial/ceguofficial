@@ -1,0 +1,121 @@
+{
+  "_note": "Pool variasi konten salespage CEGU (sumber: PDF 2). Mesin memilih variasi secara deterministik per halaman memakai variation_seed. Token {{layanan}} {{kota}} {{kecamatan}} {{kelurahan}} {{wa}} diganti saat render. Admin dapat menambah variasi via panel untuk memperbesar kombinasi (Formula Kombinasi).",
+  "content_blocks": {
+    "hero": [
+      "Les Privat {{layanan}} di {{kelurahan}}, Tutor Datang ke Rumah",
+      "Cari Guru {{layanan}} Terbaik di {{kota}}? CEGU Solusinya",
+      "Bantu Anak Lebih Percaya Diri Belajar {{layanan}} di {{kecamatan}}",
+      "Les Privat {{layanan}} {{kelurahan}} — Belajar Nyaman dari Rumah",
+      "{{layanan}} Berkualitas untuk Siswa di {{kelurahan}}, {{kota}}"
+    ],
+    "intro": [
+      "Tidak semua anak dapat memahami {{layanan}} dengan cepat.",
+      "Banyak orang tua di {{kelurahan}} kesulitan mendampingi anak belajar.",
+      "Setiap anak memiliki gaya belajar yang berbeda, dan itu wajar.",
+      "Belajar {{layanan}} jadi lebih mudah dengan pendampingan yang tepat."
+    ],
+    "pain_point": [
+      "Nilai {{layanan}} anak belum sesuai harapan.",
+      "Anak kurang percaya diri saat belajar di kelas.",
+      "Sulit memahami materi sekolah tanpa pendampingan.",
+      "Waktu orang tua terbatas untuk menemani anak belajar."
+    ],
+    "solusi": [
+      "Tutor datang langsung ke rumah Anda di {{kelurahan}}.",
+      "Kelas online fleksibel mengikuti jadwal keluarga.",
+      "Materi disesuaikan dengan kemampuan dan kebutuhan siswa.",
+      "Pendekatan belajar yang sabar, menyenangkan, dan terstruktur."
+    ],
+    "usp": [
+      "Tutor terseleksi dan berpengalaman.",
+      "Jadwal fleksibel mengikuti waktu Anda.",
+      "Laporan perkembangan siswa secara rutin.",
+      "Garansi penggantian tutor bila kurang cocok.",
+      "Tersedia kelas tatap muka maupun online.",
+      "Materi mengikuti kurikulum sekolah terbaru."
+    ],
+    "testimoni": [
+      "Nilai anak meningkat setelah belajar bersama CEGU. — Orang tua siswa, {{kota}}",
+      "Tutornya sabar dan mudah dipahami. — Wali murid, {{kecamatan}}",
+      "Anak jadi lebih semangat belajar {{layanan}}. — Orang tua siswa, {{kelurahan}}",
+      "Jadwal fleksibel, sangat membantu keluarga kami. — Wali murid, {{kota}}",
+      "Pendampingan yang ramah dan profesional. — Orang tua siswa, {{kecamatan}}"
+    ],
+    "cta": [
+      "Konsultasikan kebutuhan belajar anak sekarang.",
+      "Jadwalkan sesi privat bersama tutor terbaik di {{kelurahan}}.",
+      "Hubungi tim CEGU sekarang juga via WhatsApp.",
+      "Ambil jadwal {{layanan}} sebelum kuota tutor penuh."
+    ],
+    "about": [
+      "CEGU hadir membantu siswa Indonesia mendapatkan pendampingan belajar berkualitas.",
+      "Kami percaya setiap anak memiliki potensi yang dapat berkembang melalui bimbingan yang tepat.",
+      "CEGU menghubungkan keluarga di {{kota}} dengan tutor {{layanan}} yang tepat."
+    ],
+    "summary_open": [
+      "{{brand}} menyediakan layanan {{layanan}} di Kelurahan {{kelurahan}}, Kecamatan {{kecamatan}}, {{kota}}.",
+      "{{brand}} hadir melayani {{layanan}} untuk warga {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Butuh {{layanan}} di {{kelurahan}}? {{brand}} siap membantu di area {{kecamatan}}, {{kota}}.",
+      "Bagi keluarga di {{kelurahan}}, {{kecamatan}}, {{brand}} membuka layanan {{layanan}} terdekat di wilayah {{kota}}.",
+      "Mencari {{layanan}} terpercaya di sekitar {{kelurahan}}? {{brand}} melayani seluruh area {{kecamatan}}, {{kota}}.",
+      "{{layanan}} kini tersedia di {{kelurahan}} dan sekitarnya — {{brand}} menjangkau seluruh {{kecamatan}}, {{kota}}.",
+      "Warga {{kelurahan}}, {{kecamatan}} dapat memanfaatkan layanan {{layanan}} dari {{brand}} yang beroperasi di {{kota}}.",
+      "{{brand}} membantu orang tua di {{kelurahan}}, {{kecamatan}}, {{kota}} menemukan {{layanan}} yang tepat untuk anak."
+    ],
+    "summary_bridge": [
+      "Kami menghadirkan tutor berpengalaman dengan {{usp_text}}.",
+      "Layanan kami didukung {{usp_text}} agar belajar terasa nyaman.",
+      "Setiap siswa didampingi tutor terpilih dengan {{usp_text}}.",
+      "Program disusun bersama tutor terseleksi, ditunjang {{usp_text}}.",
+      "Keunggulan kami mencakup {{usp_text}}, sehingga hasil belajar lebih terarah.",
+      "Dengan {{usp_text}}, proses belajar menjadi lebih efektif dan menyenangkan.",
+      "Pengajaran dilakukan tutor pilihan yang menawarkan {{usp_text}}.",
+      "Kami mengutamakan kualitas melalui {{usp_text}} di setiap sesi belajar."
+    ],
+    "summary_close": [
+      "Tutor dapat datang ke rumah maupun mengajar secara online, dengan jadwal yang fleksibel mengikuti kebutuhan keluarga di {{kelurahan}}.",
+      "Tersedia kelas tatap muka di rumah maupun online, sehingga orang tua di {{kelurahan}} lebih mudah mengatur waktu belajar anak.",
+      "Baik kelas privat di rumah maupun online tersedia, lengkap dengan laporan perkembangan agar progres anak di {{kelurahan}} selalu terpantau.",
+      "Jadwal dapat disesuaikan dengan aktivitas keluarga, dan tutor siap hadir langsung ke rumah Anda di {{kelurahan}} atau lewat kelas online.",
+      "Orang tua di {{kelurahan}} dapat memilih sesi di rumah atau daring, dengan evaluasi berkala untuk memantau kemajuan belajar.",
+      "Konsultasikan kebutuhan belajar anak Anda — tim kami akan merekomendasikan tutor dan jadwal terbaik untuk keluarga di {{kelurahan}}.",
+      "Sesi belajar tersedia setiap hari, di rumah maupun online, mengikuti ritme belajar siswa di {{kelurahan}} dan sekitarnya.",
+      "Mulai dari sesi percobaan hingga program rutin, semuanya bisa diatur fleksibel untuk warga {{kelurahan}}."
+    ],
+    "summary_filler": [
+      "Tim kami siap membantu Anda berkonsultasi gratis melalui WhatsApp kapan saja.",
+      "Anda dapat menanyakan biaya, ketersediaan jadwal, hingga memilih tutor yang paling sesuai.",
+      "Setiap sesi disusun agar anak belajar dengan nyaman, terarah, dan penuh percaya diri.",
+      "Kami juga memberikan laporan perkembangan agar progres belajar selalu terpantau dengan baik."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Berapa biaya les privat {{layanan}}?",
+      "answer": "Biaya disesuaikan dengan jenjang pendidikan dan kebutuhan belajar siswa di {{kelurahan}}."
+    },
+    {
+      "question": "Apakah tutor datang ke rumah di {{kelurahan}}?",
+      "answer": "Ya, tutor dapat datang ke rumah sesuai wilayah layanan {{kecamatan}}, {{kota}}."
+    },
+    {
+      "question": "Apakah tersedia kelas online?",
+      "answer": "Ya, tersedia kelas tatap muka maupun online sesuai kebutuhan Anda."
+    },
+    {
+      "question": "Bagaimana cara memulai les {{layanan}}?",
+      "answer": "Cukup hubungi tim CEGU via WhatsApp, lalu kami bantu jadwalkan sesi pertama."
+    }
+  ],
+  "settings": {
+    "brand_name": "CEGU",
+    "whatsapp_number": "6281234567890",
+    "whatsapp_message": "Halo CEGU, saya tertarik dengan layanan {{layanan}} di {{kelurahan}}, {{kota}}.",
+    "organization_name": "CEGU",
+    "organization_url": "https://cegu.example.com",
+    "organization_logo": "https://cegu.example.com/logo.png",
+    "hero_image": "/images/hero-default.svg",
+    "summary_min_words": "80",
+    "summary_max_words": "150"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "label": "Jasa Umum (servis, perbaikan, kebersihan, dll.)",
+  "content_blocks": {
+    "hero": [
+      "{{layanan}} {{kelurahan}} — Cepat, Rapi, Bergaransi",
+      "Jasa {{layanan}} Terpercaya di {{kelurahan}}, {{kota}}",
+      "Butuh {{layanan}} di {{kelurahan}}? Teknisi Kami Siap Hari Ini",
+      "{{layanan}} Panggilan Area {{kecamatan}} — Respons Cepat",
+      "Layanan {{layanan}} Profesional untuk Warga {{kelurahan}}",
+      "{{layanan}} {{kota}} — Melayani {{kelurahan}} & Sekitarnya",
+      "Solusi {{layanan}} Terdekat dari Rumah Anda di {{kelurahan}}",
+      "{{brand}}: {{layanan}} Andalan Warga {{kecamatan}}"
+    ],
+    "intro": [
+      "Tak perlu jauh-jauh mencari — tim {{brand}} melayani {{layanan}} langsung ke lokasi Anda di {{kelurahan}} dengan peralatan lengkap dan hasil yang rapi.",
+      "Kami memahami betapa mengganggunya masalah yang butuh {{layanan}}. Karena itu tim kami di area {{kecamatan}} siap datang cepat dengan penanganan tuntas.",
+      "{{brand}} melayani {{layanan}} untuk rumah, kantor, dan usaha di {{kelurahan}}, {{kota}} — transparan sejak survei hingga selesai pengerjaan.",
+      "Cukup satu chat WhatsApp, teknisi {{layanan}} kami meluncur ke {{kelurahan}}. Estimasi biaya disampaikan di awal, tanpa biaya tersembunyi.",
+      "Sudah ratusan pelanggan di {{kota}} mempercayakan {{layanan}} kepada {{brand}}. Kini giliran warga {{kelurahan}} merasakan layanan yang sama.",
+      "Dari keluhan kecil sampai pekerjaan besar, {{layanan}} di {{kelurahan}} kami tangani dengan standar kerja profesional dan garansi layanan."
+    ],
+    "pain_point": [
+      "Sudah memanggil tukang tapi hasilnya tidak rapi dan masalah kembali lagi.",
+      "Sulit menemukan penyedia {{layanan}} yang jelas harganya dan tidak menambah biaya di tengah pekerjaan.",
+      "Teknisi datang terlambat atau bahkan tidak datang sama sekali padahal sudah janji.",
+      "Khawatir menerima orang asing ke rumah tanpa identitas dan jaminan yang jelas.",
+      "Peralatan seadanya membuat pekerjaan lama selesai dan hasilnya asal jadi.",
+      "Tidak ada garansi — begitu ada masalah lagi, penyedia jasa sulit dihubungi."
+    ],
+    "solusi": [
+      "Teknisi terlatih dengan identitas jelas, datang sesuai jadwal yang disepakati.",
+      "Estimasi biaya transparan di awal — Anda setuju dulu, baru kami kerjakan.",
+      "Peralatan lengkap dan standar kerja rapi, area kerja dibersihkan kembali setelah selesai.",
+      "Garansi layanan: bila masalah muncul lagi dalam masa garansi, kami tangani ulang tanpa biaya.",
+      "Layanan darurat tersedia untuk kebutuhan mendesak di {{kelurahan}} dan sekitarnya.",
+      "Satu kontak WhatsApp untuk semua: jadwal, harga, konsultasi, hingga keluhan pasca layanan."
+    ],
+    "usp": [
+      "respons cepat di hari yang sama",
+      "harga transparan tanpa biaya tersembunyi",
+      "teknisi berpengalaman dan beridentitas jelas",
+      "garansi layanan tertulis",
+      "peralatan lengkap dan modern",
+      "rating kepuasan pelanggan yang tinggi",
+      "melayani area {{kecamatan}} dan sekitarnya",
+      "konsultasi gratis sebelum pengerjaan"
+    ],
+    "testimoni": [
+      "\"Teknisinya datang tepat waktu, kerjanya rapi, dan harganya sesuai estimasi awal. Recommended!\" — Bapak Hendra, {{kota}}",
+      "\"Sudah dua kali pakai jasa {{brand}}, dua-duanya memuaskan. Sekarang jadi langganan.\" — Ibu Sari",
+      "\"Awalnya ragu, ternyata pelayanannya profesional banget. Ada garansinya pula.\" — Mas Dimas",
+      "\"Respons WhatsApp-nya cepat, nggak pakai lama langsung dijadwalkan.\" — Ibu Ratna",
+      "\"Hasil kerjanya bersih dan rapi, area bekas kerja pun dibersihkan lagi. Jarang ada yang begini.\" — Pak Yusuf",
+      "\"Harga masuk akal untuk kualitas yang didapat. Terima kasih {{brand}}!\" — Bu Lina",
+      "\"Sangat membantu saat kondisi darurat, teknisi datang kurang dari satu jam.\" — Pak Agus",
+      "\"Komunikatif dan jujur soal biaya. Ini yang paling saya hargai.\" — Ibu Maya"
+    ],
+    "cta": [
+      "Chat WhatsApp Sekarang — Gratis Konsultasi",
+      "Jadwalkan Kunjungan Teknisi Hari Ini",
+      "Minta Estimasi Harga via WhatsApp",
+      "Hubungi Kami — Respons Cepat",
+      "Pesan {{layanan}} Sekarang",
+      "Konsultasikan Kebutuhan Anda Gratis"
+    ],
+    "about": [
+      "{{brand}} adalah penyedia {{layanan}} yang melayani {{kota}} dan sekitarnya dengan mengedepankan kecepatan respons, transparansi harga, dan kualitas hasil kerja.",
+      "Berawal dari tim kecil, {{brand}} kini dipercaya ratusan pelanggan di {{kota}} berkat komitmen pada kerja rapi dan layanan purna jual yang jelas.",
+      "Misi kami sederhana: membuat {{layanan}} mudah diakses siapa saja di {{kota}} — cukup satu chat, semua beres."
+    ],
+    "summary_open": [
+      "{{brand}} menyediakan jasa {{layanan}} untuk wilayah {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Butuh {{layanan}} di {{kelurahan}}? {{brand}} siap datang ke lokasi Anda di area {{kecamatan}}, {{kota}}.",
+      "{{brand}} melayani panggilan {{layanan}} untuk rumah dan usaha di {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Warga {{kelurahan}}, {{kecamatan}} kini dapat memesan {{layanan}} dari {{brand}} yang beroperasi di {{kota}}.",
+      "{{layanan}} kini menjangkau {{kelurahan}} dan sekitarnya — {{brand}} melayani seluruh {{kecamatan}}, {{kota}}.",
+      "Mencari jasa {{layanan}} terpercaya di sekitar {{kelurahan}}? {{brand}} solusinya."
+    ],
+    "summary_bridge": [
+      "Kami dikenal dengan {{usp_text}}.",
+      "Setiap pekerjaan ditangani teknisi berpengalaman dengan {{usp_text}}.",
+      "Layanan kami didukung {{usp_text}} sehingga hasilnya tuntas dan rapi.",
+      "Keunggulan kami mencakup {{usp_text}}.",
+      "Dengan {{usp_text}}, Anda tidak perlu khawatir soal kualitas maupun biaya.",
+      "Kami mengutamakan {{usp_text}} di setiap panggilan layanan."
+    ],
+    "summary_close": [
+      "Teknisi siap datang ke lokasi Anda di {{kelurahan}} sesuai jadwal yang disepakati — cukup pesan lewat WhatsApp.",
+      "Estimasi biaya disampaikan transparan di awal, dan pelanggan di {{kelurahan}} mendapat garansi layanan.",
+      "Layanan tersedia setiap hari untuk warga {{kelurahan}} dan sekitarnya, termasuk kebutuhan darurat.",
+      "Konsultasikan kebutuhan Anda lewat WhatsApp dan tim kami akan menjadwalkan kunjungan ke {{kelurahan}}.",
+      "Cukup satu chat, tim kami mengatur semuanya — dari survei hingga pengerjaan selesai di {{kelurahan}}.",
+      "Kepuasan pelanggan di {{kelurahan}} adalah prioritas kami, dibuktikan dengan garansi layanan tertulis."
+    ],
+    "summary_filler": [
+      "Tim kami siap menjawab pertanyaan Anda melalui WhatsApp kapan saja di jam operasional.",
+      "Anda dapat menanyakan harga, jadwal, dan cakupan layanan sebelum memutuskan.",
+      "Setiap pekerjaan dikerjakan sesuai standar, rapi, dan tepat waktu.",
+      "Garansi layanan membuat Anda tenang setelah pekerjaan selesai."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Berapa biaya {{layanan}} di {{kelurahan}}?",
+      "answer": "Biaya tergantung jenis dan tingkat kesulitan pekerjaan. Kirim foto/deskripsi kebutuhan Anda via WhatsApp dan kami berikan estimasi transparan sebelum pengerjaan."
+    },
+    {
+      "question": "Apakah bisa datang hari ini juga?",
+      "answer": "Untuk area {{kecamatan}} dan sekitarnya, kami mengusahakan kunjungan di hari yang sama selama slot jadwal tersedia. Hubungi WhatsApp untuk cek ketersediaan."
+    },
+    {
+      "question": "Apakah ada garansi layanan?",
+      "answer": "Ada. Setiap pekerjaan disertai garansi layanan — bila masalah yang sama muncul kembali dalam masa garansi, kami tangani ulang tanpa biaya tambahan."
+    },
+    {
+      "question": "Apakah teknisi membawa peralatan sendiri?",
+      "answer": "Ya, teknisi kami datang dengan peralatan lengkap. Bila dibutuhkan suku cadang atau material, kami informasikan dan sepakati dulu biayanya dengan Anda."
+    },
+    {
+      "question": "Bagaimana cara memesan layanannya?",
+      "answer": "Cukup klik tombol WhatsApp di halaman ini, sampaikan kebutuhan dan alamat Anda di {{kelurahan}}, lalu tim kami akan mengatur jadwal kunjungan."
+    },
+    {
+      "question": "Apakah melayani area di luar {{kelurahan}}?",
+      "answer": "Ya, kami melayani seluruh {{kecamatan}} dan wilayah {{kota}} lainnya. Sebutkan lokasi Anda saat menghubungi kami."
+    },
+    {
+      "question": "Apakah harga bisa berubah di tengah pengerjaan?",
+      "answer": "Tidak, selama lingkup pekerjaan sesuai kesepakatan awal. Bila ditemukan kebutuhan tambahan, kami selalu meminta persetujuan Anda terlebih dahulu."
+    },
+    {
+      "question": "Apakah tersedia layanan untuk kantor atau usaha?",
+      "answer": "Tersedia. Kami melayani rumah tinggal, kantor, toko, hingga fasilitas usaha dengan jadwal yang bisa disesuaikan jam operasional Anda."
+    }
+  ]
+}

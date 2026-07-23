@@ -1,0 +1,48 @@
+# =====================================================================
+# CEGU pSEO Engine — contoh konfigurasi Nginx (VPS Onidel)
+# Sesuaikan: server_name, root, dan socket PHP-FPM.
+# =====================================================================
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name your-domain.com www.your-domain.com;
+
+    # Arahkan ke direktori public/ Laravel
+    root /var/www/cegu/public;
+    index index.php;
+
+    charset utf-8;
+
+    # Naikkan batas upload untuk import CSV besar (maks 50 MB di aplikasi)
+    client_max_body_size 60M;
+
+    # Gzip untuk HTML/XML (sitemap) — hemat bandwidth
+    gzip on;
+    gzip_types text/plain text/css application/json application/xml application/javascript text/xml;
+    gzip_min_length 1024;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # sitemap.xml & sitemap-N.xml ditangani Laravel (route), bukan file statis
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;   # sesuaikan versi PHP-FPM
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_read_timeout 120;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+
+# Setelah domain siap, pasang HTTPS via Certbot:
+#   sudo certbot --nginx -d your-domain.com -d www.your-domain.com

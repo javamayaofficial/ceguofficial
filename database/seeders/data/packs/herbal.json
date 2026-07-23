@@ -1,0 +1,136 @@
+{
+  "label": "Produk Herbal & Kesehatan",
+  "content_blocks": {
+    "hero": [
+      "{{layanan}} Asli — Kini Tersedia untuk Warga {{kelurahan}}",
+      "Jual {{layanan}} Terpercaya di {{kelurahan}}, {{kota}}",
+      "{{layanan}} Berkualitas, Dikirim Cepat ke {{kelurahan}}",
+      "Cari {{layanan}} di {{kecamatan}}? Pesan Mudah via WhatsApp",
+      "{{layanan}} Pilihan Keluarga di {{kota}}",
+      "Distributor {{layanan}} Area {{kecamatan}} — Stok Selalu Ready",
+      "{{brand}}: {{layanan}} Asli dengan Harga Bersahabat",
+      "Hidup Lebih Sehat Bersama {{layanan}} — Melayani {{kelurahan}}"
+    ],
+    "intro": [
+      "{{brand}} menghadirkan {{layanan}} berkualitas untuk warga {{kelurahan}} dan sekitarnya — produk asli, stok terjaga, dan pengiriman cepat sampai ke rumah Anda.",
+      "Menjaga kesehatan keluarga kini lebih mudah. {{layanan}} dari {{brand}} bisa dipesan langsung via WhatsApp dan dikirim ke alamat Anda di {{kelurahan}}.",
+      "Kami memahami pentingnya keaslian produk kesehatan. Karena itu setiap {{layanan}} yang kami kirim ke {{kecamatan}} terjamin orisinal dan tersegel rapi.",
+      "Sudah banyak keluarga di {{kota}} yang merasakan manfaat {{layanan}} dari {{brand}}. Kini giliran Anda di {{kelurahan}}.",
+      "Tak perlu keluar rumah — pesan {{layanan}} lewat WhatsApp, tim kami memproses cepat dan mengirim ke {{kelurahan}} hari itu juga selama stok tersedia.",
+      "{{brand}} melayani pembelian eceran maupun jumlah banyak untuk {{layanan}} di seluruh wilayah {{kota}}."
+    ],
+    "pain_point": [
+      "Sulit membedakan produk asli dan palsu yang beredar di pasaran.",
+      "Sudah pernah membeli produk serupa tapi tidak terasa manfaatnya.",
+      "Ragu memesan online karena takut barang tidak sampai atau tidak sesuai.",
+      "Harga di tempat lain tidak masuk akal, terlalu murah mencurigakan atau terlalu mahal.",
+      "Penjual sulit dihubungi setelah barang diterima, tidak ada layanan purna jual.",
+      "Stok sering kosong di toko terdekat sehingga konsumsi rutin terputus."
+    ],
+    "solusi": [
+      "Produk 100% asli, tersegel, dan dapat diverifikasi keasliannya.",
+      "Kami jelaskan aturan pakai dan hal yang perlu diperhatikan sebelum Anda membeli — bukan sekadar jualan.",
+      "Pengiriman cepat ke {{kelurahan}} dengan pengemasan aman dan rapi.",
+      "Harga jujur dan wajar, sesuai kualitas — tersedia juga harga khusus pembelian rutin.",
+      "Layanan konsultasi via WhatsApp sebelum dan sesudah pembelian.",
+      "Stok terjaga sehingga konsumsi rutin Anda tidak terputus."
+    ],
+    "usp": [
+      "produk asli dan tersegel",
+      "stok selalu tersedia",
+      "pengiriman cepat ke alamat Anda",
+      "konsultasi gratis sebelum membeli",
+      "harga jujur dan bersahabat",
+      "layanan purna jual yang responsif",
+      "melayani eceran dan grosir",
+      "pengemasan aman dan rapi"
+    ],
+    "testimoni": [
+      "\"Barang asli, segel utuh, pengiriman cepat. Puas belanja di sini.\" — Ibu Nurul, {{kota}}",
+      "\"Penjualnya informatif, dijelaskan dulu aturan pakainya. Nggak asal jual.\" — Bapak Rahmat",
+      "\"Sudah langganan berbulan-bulan, stok selalu ada dan harganya stabil.\" — Ibu Dewi",
+      "\"Awalnya coba-coba, sekarang seluruh keluarga ikut pakai.\" — Mbak Fitri",
+      "\"Respons WhatsApp cepat, pesanan diproses hari itu juga.\" — Pak Budi",
+      "\"Packing-nya rapi dan aman, sampai dalam kondisi sempurna.\" — Ibu Yanti",
+      "\"Ditanya-tanya dulu kondisinya sebelum direkomendasikan produk. Ini yang bikin percaya.\" — Bu Rina",
+      "\"Harga bersaing tapi kualitas terjamin. Recommended seller!\" — Mas Andri"
+    ],
+    "cta": [
+      "Pesan Sekarang via WhatsApp",
+      "Cek Stok & Harga — Chat Kami",
+      "Konsultasi Gratis Sebelum Membeli",
+      "Order Mudah, Kirim Cepat — Klik di Sini",
+      "Tanya-Tanya Dulu? Silakan, Gratis!",
+      "Dapatkan Harga Terbaik Hari Ini"
+    ],
+    "about": [
+      "{{brand}} adalah penyedia {{layanan}} terpercaya yang melayani {{kota}} dan sekitarnya, mengutamakan keaslian produk, edukasi penggunaan yang benar, dan layanan pelanggan yang responsif.",
+      "Kami percaya produk kesehatan harus dijual dengan jujur: asli, jelas aturan pakainya, dan didukung layanan purna jual. Itulah komitmen {{brand}} sejak awal berdiri.",
+      "{{brand}} melayani ribuan pelanggan di {{kota}} dengan satu prinsip: kepercayaan pelanggan lebih berharga daripada penjualan sesaat."
+    ],
+    "summary_open": [
+      "{{brand}} menyediakan {{layanan}} untuk warga {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Mencari {{layanan}} asli di {{kelurahan}}? {{brand}} melayani pemesanan untuk seluruh area {{kecamatan}}, {{kota}}.",
+      "{{layanan}} kini mudah didapatkan di {{kelurahan}} — {{brand}} melayani pengiriman ke seluruh {{kecamatan}}, {{kota}}.",
+      "Warga {{kelurahan}}, {{kecamatan}} dapat memesan {{layanan}} dari {{brand}} dengan mudah melalui WhatsApp.",
+      "{{brand}} hadir memenuhi kebutuhan {{layanan}} keluarga di {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Butuh {{layanan}} dengan stok terjamin di {{kelurahan}}? {{brand}} jawabannya."
+    ],
+    "summary_bridge": [
+      "Kami dikenal dengan {{usp_text}}.",
+      "Setiap produk yang kami kirim terjamin dengan {{usp_text}}.",
+      "Kepercayaan pelanggan kami jaga melalui {{usp_text}}.",
+      "Keunggulan kami mencakup {{usp_text}}.",
+      "Dengan {{usp_text}}, Anda dapat berbelanja dengan tenang.",
+      "Kami mengutamakan {{usp_text}} di setiap transaksi."
+    ],
+    "summary_close": [
+      "Pemesanan cukup melalui WhatsApp dan pesanan dikirim ke alamat Anda di {{kelurahan}} dengan pengemasan aman.",
+      "Tersedia layanan konsultasi gratis sebelum membeli agar produk sesuai kebutuhan Anda di {{kelurahan}}.",
+      "Stok kami jaga agar konsumsi rutin pelanggan di {{kelurahan}} tidak pernah terputus.",
+      "Pengiriman cepat menjangkau {{kelurahan}} dan seluruh wilayah sekitarnya setiap hari kerja.",
+      "Silakan chat WhatsApp untuk cek stok, harga terbaru, dan promo khusus warga {{kelurahan}}.",
+      "Layanan purna jual kami siap membantu pelanggan di {{kelurahan}} kapan pun dibutuhkan."
+    ],
+    "summary_filler": [
+      "Tim kami siap menjawab pertanyaan seputar produk melalui WhatsApp.",
+      "Anda dapat menanyakan stok, harga, dan cara penggunaan sebelum membeli.",
+      "Setiap pesanan dikemas rapi dan diproses secepat mungkin.",
+      "Kepuasan dan kepercayaan pelanggan adalah prioritas utama kami."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Apakah produk {{layanan}} ini asli?",
+      "answer": "Ya, 100% asli dan tersegel. Kami hanya menjual produk orisinal yang dapat diverifikasi keasliannya. Keraguan Anda bisa dikonfirmasi via WhatsApp sebelum membeli."
+    },
+    {
+      "question": "Berapa lama pengiriman ke {{kelurahan}}?",
+      "answer": "Untuk area {{kecamatan}} dan sekitarnya, pesanan yang masuk sebelum sore biasanya diproses di hari yang sama. Estimasi tiba mengikuti jarak dan kurir yang dipilih."
+    },
+    {
+      "question": "Bagaimana cara memesan?",
+      "answer": "Klik tombol WhatsApp di halaman ini, sebutkan produk dan jumlah yang diinginkan beserta alamat Anda di {{kelurahan}}. Tim kami akan mengonfirmasi total dan pengiriman."
+    },
+    {
+      "question": "Apakah bisa bayar di tempat (COD)?",
+      "answer": "Untuk sebagian area {{kota}} tersedia opsi COD. Sebutkan lokasi Anda saat memesan dan kami informasikan metode pembayaran yang tersedia."
+    },
+    {
+      "question": "Apakah aman dikonsumsi bersama obat dokter?",
+      "answer": "Kondisi setiap orang berbeda. Kami sarankan berkonsultasi dengan dokter atau tenaga kesehatan Anda terlebih dahulu, terutama bila sedang menjalani pengobatan rutin."
+    },
+    {
+      "question": "Apakah ada harga grosir?",
+      "answer": "Ada. Untuk pembelian dalam jumlah banyak atau berlangganan rutin, tersedia harga khusus. Silakan tanyakan via WhatsApp."
+    },
+    {
+      "question": "Bagaimana jika barang yang diterima rusak?",
+      "answer": "Segera foto kondisi barang dan kirimkan ke WhatsApp kami maksimal 1×24 jam setelah diterima. Kami akan bantu proses penggantian sesuai ketentuan."
+    },
+    {
+      "question": "Apakah tersedia produk lain selain {{layanan}}?",
+      "answer": "Tersedia. Silakan tanyakan kebutuhan Anda via WhatsApp dan tim kami akan merekomendasikan produk yang sesuai."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# =====================================================================
+# CEGU pSEO Engine — Supervisor untuk Laravel Queue Worker
+# Simpan di: /etc/supervisor/conf.d/cegu-worker.conf
+# Lalu:
+#   sudo supervisorctl reread
+#   sudo supervisorctl update
+#   sudo supervisorctl status
+# =====================================================================
+
+[program:cegu-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/cegu/artisan queue:work --sleep=1 --tries=3 --max-time=3600 --backoff=5
+directory=/var/www/cegu
+autostart=true
+autorestart=true
+stopasgroup=true
+killasgroup=true
+user=www-data
+numprocs=4                      ; naikkan saat generate besar (mis. 8), turunkan saat idle
+redirect_stderr=true
+stdout_logfile=/var/www/cegu/storage/logs/worker.log
+stopwaitsecs=3600
+
+# Catatan:
+# - numprocs = jumlah worker paralel. RFP target jutaan halaman → 4–8 worker saat batch.
+# - Setelah deploy ulang / ubah kode, restart worker: php artisan queue:restart

@@ -1,0 +1,136 @@
+{
+  "label": "Properti (rumah, tanah, kavling, kontrakan)",
+  "content_blocks": {
+    "hero": [
+      "{{layanan}} di {{kelurahan}} — Lokasi Strategis, Harga Masuk Akal",
+      "Cari {{layanan}} Area {{kecamatan}}? Lihat Pilihan Terbaiknya di Sini",
+      "{{layanan}} {{kelurahan}}, {{kota}} — Legalitas Aman",
+      "Investasi Cerdas: {{layanan}} di Kawasan Berkembang {{kecamatan}}",
+      "{{layanan}} Siap Huni di {{kelurahan}} — Survei Gratis",
+      "Miliki {{layanan}} Impian Anda di {{kota}}",
+      "{{brand}}: Spesialis {{layanan}} Wilayah {{kecamatan}}",
+      "{{layanan}} {{kelurahan}} — Bisa KPR, Proses Dibantu Sampai Akad"
+    ],
+    "intro": [
+      "Mencari {{layanan}} di {{kelurahan}} tidak harus ribet. {{brand}} membantu Anda dari pemilihan unit, survei lokasi, cek legalitas, hingga proses pembayaran atau KPR.",
+      "Kawasan {{kecamatan}} terus berkembang — akses, fasilitas, dan nilai propertinya. Inilah waktu yang tepat memiliki {{layanan}} di {{kelurahan}}.",
+      "{{brand}} menghadirkan pilihan {{layanan}} di {{kelurahan}}, {{kota}} dengan legalitas jelas dan harga yang bisa dipertanggungjawabkan.",
+      "Kami tahu membeli properti adalah keputusan besar. Karena itu tim {{brand}} mendampingi Anda di setiap langkah, mulai survei gratis hingga serah terima.",
+      "Baik untuk ditempati maupun investasi, {{layanan}} di {{kelurahan}} layak masuk pertimbangan Anda — dan {{brand}} siap membantu mewujudkannya.",
+      "Jadwalkan survei {{layanan}} di {{kelurahan}} tanpa biaya. Cukup chat WhatsApp, tim kami mengatur waktunya sesuai kesibukan Anda."
+    ],
+    "pain_point": [
+      "Takut tertipu karena legalitas properti tidak jelas atau bermasalah.",
+      "Harga di iklan berbeda jauh dengan harga sebenarnya saat ditanyakan.",
+      "Sulit mendapatkan informasi lengkap: foto seadanya, lokasi tidak jelas, spesifikasi tidak detail.",
+      "Proses KPR terasa rumit dan tidak ada yang membantu mengurus.",
+      "Agen sulit dihubungi atau lambat merespons saat dibutuhkan.",
+      "Sudah survei berkali-kali tapi unit tidak sesuai dengan yang diiklankan."
+    ],
+    "solusi": [
+      "Legalitas setiap unit kami periksa dan sampaikan apa adanya sebelum Anda memutuskan.",
+      "Harga yang tercantum adalah harga sebenarnya — nego dilakukan transparan bersama pemilik.",
+      "Informasi lengkap: foto asli terbaru, video, denah, spesifikasi, dan titik lokasi presisi.",
+      "Pendampingan proses KPR dari pengajuan hingga akad, bekerja sama dengan bank rekanan.",
+      "Satu kontak WhatsApp yang responsif untuk survei, nego, dan semua pertanyaan Anda.",
+      "Survei gratis dan terjadwal — unit yang Anda lihat sesuai dengan yang diiklankan."
+    ],
+    "usp": [
+      "legalitas aman dan diperiksa",
+      "harga transparan tanpa markup tersembunyi",
+      "survei lokasi gratis",
+      "pendampingan KPR sampai akad",
+      "foto dan informasi unit apa adanya",
+      "menguasai pasar properti {{kecamatan}}",
+      "respons WhatsApp yang cepat",
+      "pendampingan hingga serah terima"
+    ],
+    "testimoni": [
+      "\"Dibantu dari survei sampai akad KPR. Prosesnya jadi jauh lebih mudah dari yang saya bayangkan.\" — Bapak Firman, {{kota}}",
+      "\"Legalitasnya dijelaskan detail di awal. Ini yang bikin saya berani lanjut.\" — Ibu Kartika",
+      "\"Foto di iklan sama persis dengan kondisi aslinya. Jujur dan profesional.\" — Pak Seno",
+      "\"Agennya responsif, ditanya jam berapa pun dijawab dengan sabar.\" — Mbak Ayu",
+      "\"Dapat harga yang masuk akal setelah dibantu nego. Puas!\" — Bapak Iwan",
+      "\"Survei dijadwalkan cepat dan tepat waktu. Sangat menghargai waktu klien.\" — Ibu Retno",
+      "\"Setahun setelah beli, nilai propertinya sudah naik. Terima kasih rekomendasinya.\" — Pak Darto",
+      "\"Proses balik nama diurus sampai tuntas. Benar-benar terbantu.\" — Ibu Wulan"
+    ],
+    "cta": [
+      "Jadwalkan Survei Gratis via WhatsApp",
+      "Tanya Harga & Ketersediaan Unit",
+      "Konsultasi KPR Gratis — Chat Kami",
+      "Minta Detail Lengkap Unit Ini",
+      "Hubungi Kami Sebelum Unit Terjual",
+      "Wujudkan Properti Impian Anda Sekarang"
+    ],
+    "about": [
+      "{{brand}} adalah mitra properti terpercaya di {{kota}} yang membantu masyarakat menemukan {{layanan}} dengan legalitas aman, harga wajar, dan proses yang didampingi hingga tuntas.",
+      "Menguasai pasar properti {{kota}} bertahun-tahun, {{brand}} mengedepankan kejujuran informasi — karena keputusan properti adalah keputusan besar yang layak didampingi dengan benar.",
+      "Dari pencarian unit, survei, negosiasi, KPR, hingga serah terima — {{brand}} hadir di setiap langkah perjalanan properti Anda di {{kota}}."
+    ],
+    "summary_open": [
+      "{{brand}} menyediakan pilihan {{layanan}} di {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Mencari {{layanan}} di {{kelurahan}}? {{brand}} menguasai pasar properti area {{kecamatan}}, {{kota}}.",
+      "{{layanan}} di kawasan berkembang {{kelurahan}}, {{kecamatan}} kini tersedia melalui {{brand}}.",
+      "{{brand}} membantu Anda menemukan {{layanan}} yang tepat di {{kelurahan}}, {{kecamatan}}, {{kota}}.",
+      "Bagi Anda yang mengincar {{layanan}} di {{kelurahan}}, {{brand}} siap mendampingi dari survei hingga serah terima.",
+      "Peluang memiliki {{layanan}} di {{kelurahan}}, {{kota}} terbuka — {{brand}} yang mengurus prosesnya."
+    ],
+    "summary_bridge": [
+      "Kami dikenal dengan {{usp_text}}.",
+      "Setiap unit kami tawarkan dengan {{usp_text}}.",
+      "Kepercayaan klien kami bangun melalui {{usp_text}}.",
+      "Keunggulan kami mencakup {{usp_text}}.",
+      "Dengan {{usp_text}}, keputusan properti Anda lebih tenang dan terukur.",
+      "Kami mengutamakan {{usp_text}} di setiap transaksi properti."
+    ],
+    "summary_close": [
+      "Jadwalkan survei gratis ke lokasi di {{kelurahan}} melalui WhatsApp dan tim kami mendampingi Anda langsung.",
+      "Informasi harga, denah, dan legalitas unit di {{kelurahan}} dapat diminta lengkap sebelum survei.",
+      "Tersedia pendampingan KPR hingga akad bagi pembeli di {{kelurahan}} dan sekitarnya.",
+      "Unit di kawasan {{kelurahan}} bergerak cepat — hubungi kami untuk memastikan ketersediaannya.",
+      "Tim kami siap menjawab semua pertanyaan Anda tentang properti di {{kelurahan}} melalui WhatsApp.",
+      "Dari nego hingga serah terima, proses pembelian di {{kelurahan}} kami dampingi sampai tuntas."
+    ],
+    "summary_filler": [
+      "Konsultasi awal tidak dipungut biaya apa pun.",
+      "Anda dapat meminta foto, video, dan denah terbaru sebelum memutuskan survei.",
+      "Setiap informasi unit kami sampaikan apa adanya, termasuk kekurangannya.",
+      "Pendampingan kami berlanjut hingga proses serah terima selesai."
+    ]
+  },
+  "faqs": [
+    {
+      "question": "Bagaimana memastikan legalitas {{layanan}} ini aman?",
+      "answer": "Setiap unit kami periksa dokumennya (sertifikat, IMB/PBG, PBB) sebelum dipasarkan, dan salinannya dapat Anda cek saat survei. Kami sampaikan kondisi legalitas apa adanya."
+    },
+    {
+      "question": "Apakah survei lokasi dikenakan biaya?",
+      "answer": "Tidak, survei gratis. Jadwalkan melalui WhatsApp dan tim kami akan menemani Anda melihat unit di {{kelurahan}} sesuai waktu yang Anda pilih."
+    },
+    {
+      "question": "Apakah bisa dibeli dengan KPR?",
+      "answer": "Sebagian besar unit bisa. Kami bantu proses pengajuan KPR dari perhitungan kemampuan cicilan, kelengkapan dokumen, hingga akad di bank rekanan."
+    },
+    {
+      "question": "Apakah harga masih bisa nego?",
+      "answer": "Umumnya masih ada ruang negosiasi. Sampaikan penawaran Anda dan kami bantu komunikasikan langsung dengan pemilik secara transparan."
+    },
+    {
+      "question": "Berapa DP minimal yang dibutuhkan?",
+      "answer": "Bervariasi tergantung unit dan skema pembayaran. Konsultasikan kemampuan Anda via WhatsApp dan kami carikan skema yang paling sesuai."
+    },
+    {
+      "question": "Apakah biaya balik nama dan pajak sudah termasuk?",
+      "answer": "Rincian biaya-biaya (BPHTB, AJB, balik nama, dll.) kami jabarkan transparan di awal sehingga tidak ada kejutan biaya di tengah proses."
+    },
+    {
+      "question": "Bagaimana prospek kawasan {{kelurahan}}?",
+      "answer": "Kami dapat memaparkan perkembangan akses, fasilitas, dan tren harga di {{kecamatan}} saat konsultasi, agar keputusan Anda berbasis data."
+    },
+    {
+      "question": "Apakah melayani titip jual properti?",
+      "answer": "Ya. Bila Anda memiliki properti di {{kota}} yang ingin dijual atau disewakan, hubungi kami untuk pemasaran dengan jaringan pembeli yang kami miliki."
+    }
+  ]
+}

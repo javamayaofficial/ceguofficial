@@ -1,0 +1,204 @@
+<header class="cegu-hero">
+    <div class="in">
+        {{breadcrumb}}
+        <div class="cegu-hero-grid">
+            <div class="cegu-hero-text">
+                <span class="cegu-eyebrow">{{layanan}} • {{kelurahan}}, {{kota}}</span>
+                <h1>{{hero}}</h1>
+                <p class="lead">{{intro}}</p>
+                <div class="cegu-hero-cta">
+                    <a class="cegu-btn light" href="{{wa}}" target="_blank" rel="noopener nofollow"><span aria-hidden="true">💬</span> Konsultasi Gratis</a>
+                    <a class="cegu-btn" href="#keunggulan">Lihat Keunggulan</a>
+                </div>
+                {{#jam_operasional}}<p style="margin-top:12px;font-size:.92rem;opacity:.85">🕒 Jam operasional: <strong>{{jam_operasional}}</strong></p>{{/jam_operasional}}
+            </div>
+            {{hero_image}}
+        </div>
+
+        {{! Bar angka — HANYA tampil bila datanya nyata dari CSV. Tidak ada klaim karangan. }}
+        {{#pengalaman}}{{#harga}}
+        <div class="cegu-stats">
+            <div class="cegu-stat"><div class="n">{{harga}}</div><div class="l">Harga mulai dari</div></div>
+            <div class="cegu-stat"><div class="n">{{pengalaman}}</div><div class="l">Pengalaman melayani</div></div>
+            <div class="cegu-stat"><div class="n">{{kelurahan}}</div><div class="l">Area layanan kami</div></div>
+        </div>
+        {{/harga}}{{/pengalaman}}
+    </div>
+</header>
+
+{{! ============ DATA LOKAL — pembeda utama antar halaman, ditaruh tinggi ============ }}
+<section class="cegu-section" aria-labelledby="h-info">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Informasi {{kelurahan}}</span>
+            <h2 id="h-info">Rincian Layanan di {{kelurahan}}</h2>
+            <p>Detail {{layanan}} untuk wilayah {{kelurahan}}, {{kecamatan}}.</p>
+        </div>
+        {{fakta_lokal}}
+        {{#landmark}}<p style="margin-top:14px;color:var(--muted)">Lokasi kami mudah dijangkau dari <strong>{{landmark}}</strong> dan sekitarnya.</p>{{/landmark}}
+        <div style="margin-top:22px">
+            <a class="cegu-btn green" href="{{wa}}" target="_blank" rel="noopener nofollow"><span aria-hidden="true">💬</span> Tanya Ketersediaan &amp; Harga</a>
+        </div>
+    </div>
+</section>
+
+<section class="cegu-section alt" aria-labelledby="h-masalah">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Kenapa {{brand}}</span>
+            <h2 id="h-masalah">Tantangan yang Sering Dialami</h2>
+            <p>Kami memahami kendala yang sering dihadapi pelanggan di {{kelurahan}}.</p>
+        </div>
+        {{pain_point_list}}
+    </div>
+</section>
+
+<section class="cegu-section" aria-labelledby="h-solusi">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Solusi</span>
+            <h2 id="h-solusi">Solusi dari {{brand}} untuk {{kelurahan}}</h2>
+        </div>
+        {{gambar_solusi}}
+        {{solusi_list}}
+    </div>
+</section>
+
+{{! ============ KEUNGGULAN — didorong variasi konten, jadi beda tiap halaman ============ }}
+<section id="keunggulan" class="cegu-section alt" aria-labelledby="h-usp">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Nilai Lebih Kami</span>
+            <h2 id="h-usp">Keunggulan {{layanan}} di {{kelurahan}}</h2>
+            <p>Alasan pelanggan di {{kecamatan}} memilih kami.</p>
+        </div>
+        {{gambar_keunggulan}}
+        {{usp_list}}
+    </div>
+</section>
+
+<section class="cegu-section" aria-labelledby="h-standar">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Standar Kami</span>
+            <h2 id="h-standar">Cara Kami Menjaga Kualitas</h2>
+        </div>
+        <div class="cegu-grid">
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg></div>
+                <h3>Tim Profesional</h3>
+                <p>{{layanan}} ditangani tenaga yang berpengalaman di bidangnya.</p>
+            </div>
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H7l-3 3z"/></svg></div>
+                <h3>Informasi Transparan</h3>
+                <p>Rincian dan biaya dijelaskan di awal, plus konsultasi gratis via WhatsApp.</p>
+            </div>
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+                <h3>Menjangkau {{kelurahan}}</h3>
+                <p>Tak perlu jauh-jauh — layanan kami menjangkau langsung {{kelurahan}}, {{kecamatan}}.</p>
+            </div>
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 0 1 18 0v5a3 3 0 0 1-3 3h-1v-6h4M6 19H5a3 3 0 0 1-3-3v0"/></svg></div>
+                <h3>Respons Cepat</h3>
+                <p>Pertanyaan Anda dibalas cepat lewat WhatsApp oleh tim kami.</p>
+            </div>
+            {{#garansi}}
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+                <h3>Bergaransi</h3>
+                <p>{{garansi}}</p>
+            </div>
+            {{/garansi}}
+            {{#legalitas}}
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+                <h3>Legalitas Jelas</h3>
+                <p>{{legalitas}}</p>
+            </div>
+            {{/legalitas}}
+        </div>
+    </div>
+</section>
+
+{{! ============ CARA PESAN — menaikkan konversi & berpeluang jadi rich result ============ }}
+<section class="cegu-section alt" aria-labelledby="h-cara">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Mudah &amp; Cepat</span>
+            <h2 id="h-cara">Cara Memesan {{layanan}}</h2>
+            <p>Tiga langkah sederhana, tanpa ribet.</p>
+        </div>
+        <div class="cegu-grid">
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><strong style="font-size:1.4rem">1</strong></div>
+                <h3>Hubungi Kami</h3>
+                <p>Klik tombol WhatsApp dan sampaikan kebutuhan {{layanan}} Anda di {{kelurahan}}.</p>
+            </div>
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><strong style="font-size:1.4rem">2</strong></div>
+                <h3>Konsultasi Gratis</h3>
+                <p>Tim kami menjelaskan pilihan, ketersediaan, dan rincian biaya secara terbuka.</p>
+            </div>
+            <div class="cegu-tile">
+                <div class="ico" aria-hidden="true"><strong style="font-size:1.4rem">3</strong></div>
+                <h3>Layanan Berjalan</h3>
+                <p>Setelah disepakati{{#jadwal}} sesuai jadwal {{jadwal}}{{/jadwal}}, layanan langsung kami proses.</p>
+            </div>
+        </div>
+        <div style="margin-top:24px;text-align:center">
+            <a class="cegu-btn green" href="{{wa}}" target="_blank" rel="noopener nofollow"><span aria-hidden="true">💬</span> Mulai Langkah Pertama</a>
+        </div>
+    </div>
+</section>
+
+<section id="testimoni" class="cegu-section" aria-labelledby="h-testi">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Kata Mereka</span>
+            <h2 id="h-testi">Cerita dari Pelanggan Kami</h2>
+        </div>
+        {{testimoni_list}}
+    </div>
+</section>
+
+<section class="cegu-section alt" aria-labelledby="h-tentang">
+    <div class="in cegu-about">
+        <div class="cegu-head"><h2 id="h-tentang">Tentang {{layanan}} di {{kelurahan}}</h2></div>
+        {{gambar_tentang}}
+        <div class="cegu-summary">{{summary}}</div>
+        <p style="margin-top:16px;color:var(--muted)">{{about}}</p>
+    </div>
+</section>
+
+<section id="faq" class="cegu-section" aria-labelledby="h-faq">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Tanya Jawab</span>
+            <h2 id="h-faq">Pertanyaan yang Sering Diajukan</h2>
+            <p>Seputar {{layanan}} di {{kelurahan}}, {{kecamatan}}, {{kota}}.</p>
+        </div>
+        {{faq}}
+    </div>
+</section>
+
+<section class="cegu-section alt" aria-labelledby="h-jangkauan">
+    <div class="in">
+        <div class="cegu-head">
+            <span class="cegu-eyebrow">Jangkauan</span>
+            <h2 id="h-jangkauan">Temukan Wilayah &amp; Layanan Lainnya</h2>
+        </div>
+        {{internal_links}}
+    </div>
+</section>
+
+<section class="cegu-section">
+    <div class="in">
+        <div class="cegu-cta-final">
+            <h2>{{cta}}</h2>
+            <p>Konsultasi gratis untuk {{layanan}} di {{kelurahan}}, {{kecamatan}}, {{kota}}.{{#jam_operasional}} Kami buka {{jam_operasional}}.{{/jam_operasional}}</p>
+            <a class="cegu-btn green" href="{{wa}}" target="_blank" rel="noopener nofollow"><span aria-hidden="true">💬</span> Hubungi via WhatsApp</a>
+        </div>
+    </div>
+</section>
