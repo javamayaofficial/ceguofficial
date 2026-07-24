@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Admin') — {{ config('daya.engine_name', 'CEGU') }}</title>
+    @php
+        $__engine = \App\Models\Setting::get('engine_name') ?: config('daya.engine_name', 'CEGU');
+        $__engineLogo = trim((string) \App\Models\Setting::get('engine_logo', ''));
+    @endphp
+    <title>@yield('title', 'Admin') — {{ $__engine }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -168,7 +172,14 @@
 @endphp
 <div class="wrap">
     <aside class="side" id="side">
-        <div class="brand"><span class="dot">⚡</span>{{ config('daya.engine_name', 'CEGU') }}</div>
+        <div class="brand">
+            @if($__engineLogo)
+                <img src="{{ $__engineLogo }}" alt="{{ $__engine }}" style="width:26px;height:26px;object-fit:contain;border-radius:6px;flex-shrink:0">
+            @else
+                <span class="dot">⚡</span>
+            @endif
+            {{ $__engine }}
+        </div>
 
         <a href="{{ route('admin.dashboard') }}" class="{{ $r==='admin.dashboard'?'active':'' }}">{!! $svg('home') !!} Dashboard</a>
 
@@ -180,6 +191,7 @@
         <a href="{{ route('admin.content.index') }}" class="{{ $aktif('admin.content') }}">{!! $svg('layers') !!} Variasi Konten</a>
         <a href="{{ route('admin.faqs.index') }}" class="{{ $aktif('admin.faqs') }}">{!! $svg('chat') !!} FAQ</a>
         <a href="{{ route('admin.templates.index') }}" class="{{ $aktif('admin.templates') }}">{!! $svg('grid') !!} Template</a>
+        <a href="{{ route('admin.services.index') }}" class="{{ $aktif('admin.services') }}">{!! $svg('tag') !!} Layanan &amp; Harga</a>
         <a href="{{ route('admin.keywords.index') }}" class="{{ $aktif('admin.keywords') }}">{!! $svg('tag') !!} Keyword AI</a>
 
         <div class="sep">Halaman</div>

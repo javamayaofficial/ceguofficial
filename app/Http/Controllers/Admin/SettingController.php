@@ -4,21 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Support\BrandColors;
 use App\Support\RenderCache;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 
 class SettingController extends Controller
 {
-    private const COLOR_FIELDS = [
-        'color_primary' => ['--g', '#2b8a99', 'Warna utama (hero, tombol, judul)'],
-        'color_primary_dark' => ['--gd', '#1f6a76', 'Warna utama gelap (gradient & hover)'],
-        'color_accent' => ['--gold', '#f5a623', 'Warna aksen (angka, sorotan)'],
-        'color_cta' => ['--red', '#e8543f', 'Warna tombol sekunder'],
-        'color_bg' => ['--bg', '#f2fbfc', 'Latar halaman'],
-        'color_ink' => ['--ink', '#173d44', 'Warna teks utama'],
-    ];
-
     private const KEYS = [
         'brand_name', 'tagline', 'theme_prefix', 'whatsapp_number', 'whatsapp_message',
         'logo_image',
@@ -30,51 +21,61 @@ class SettingController extends Controller
         'contact_address', 'contact_phone', 'contact_email', 'contact_hours',
         'organization_name', 'organization_url', 'organization_logo',
         'hero_image', 'template_blade_enabled',
-        // Integrasi Google/Bing
         'google_site_verification', 'bing_site_verification',
         'google_analytics_id', 'gtm_id',
-        // Palet warna per instalasi (mesin dipakai lintas produk)
         'color_primary', 'color_primary_dark', 'color_accent', 'color_cta', 'color_bg', 'color_ink',
-        // Slot gambar tambahan agar salespage lebih kaya visual
         'image_proses', 'image_galeri_1', 'image_galeri_2', 'image_galeri_3',
         'image_galeri_4', 'image_galeri_5', 'image_galeri_6',
+        'home_hero_eyebrow', 'home_hero_title', 'home_hero_lead',
+        'home_cta_title', 'home_cta_lead', 'home_about_desc',
+        'home_testi1', 'home_testi1_who', 'home_testi2', 'home_testi2_who',
+        'home_testi3', 'home_testi3_who',
+        'home_use_template', 'home_area_label', 'home_layanan_label',
+        'kredensial_1_img', 'kredensial_1_label', 'kredensial_2_img', 'kredensial_2_label',
+        'kredensial_3_img', 'kredensial_3_label', 'kredensial_4_img', 'kredensial_4_label',
+        'kredensial_5_img', 'kredensial_5_label', 'kredensial_6_img', 'kredensial_6_label',
+        'engine_name', 'engine_logo',
+        'default_robots', 'og_image', 'og_locale', 'theme_color',
+        'ai_driver', 'ai_model', 'ai_base_url',
+        'referensi_1_label', 'referensi_1_url', 'referensi_2_label', 'referensi_2_url',
+        'referensi_3_label', 'referensi_3_url', 'referensi_4_label', 'referensi_4_url',
     ];
 
     public function edit()
     {
-        // #region debug-point A:settings-edit-entry
-        $this->reportDebug('A', 'pre-fix', '[DEBUG] Enter admin.settings.edit', [
-            'route' => request()->path(),
-            'user_id' => optional(request()->user())->id,
-        ]);
-        // #endregion
-        try {
-            $settings = Setting::map();
-            $colorPalette = $this->colorPalette();
-            $colorValues = [];
-            foreach ($colorPalette as $key => $info) {
-                $colorValues[$key] = $this->currentColor($key, $settings[$key] ?? null, $info[1]);
-            }
-            // #region debug-point B:settings-map-loaded
-            $this->reportDebug('B', 'pre-fix', '[DEBUG] Loaded settings map', [
-                'count' => is_array($settings) ? count($settings) : null,
-                'has_brand_name' => is_array($settings) && array_key_exists('brand_name', $settings),
-                'has_theme_prefix' => is_array($settings) && array_key_exists('theme_prefix', $settings),
-                'color_palette_count' => count($colorPalette),
-            ]);
-            // #endregion
+        $settings = Setting::map();
+        $colorPalette = BrandColors::MAP;
+        $colorValues = [];
+        foreach ($colorPalette as $key => $info) {
+            $colorValues[$key] = BrandColors::current($key);
+        }
 
-            return view('admin.settings.edit', compact('settings', 'colorPalette', 'colorValues'));
-        } catch (\Throwable $e) {
-            // #region debug-point C:settings-edit-exception
-            $this->reportDebug('C', 'pre-fix', '[DEBUG] Exception in admin.settings.edit', [
-                'class' => $e::class,
-                'message' => $e->getMessage(),
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
+        return view('admin.settings.edit', compact('settings', 'colorPalette', 'colorValues'));
+    }
+
+    public function testAi()
+    {
+        if (! \App\Services\Ai\AiClientFactory::isConfigured()) {
+            return response()->json(['ok' => false, 'pesan' => 'Kunci API belum diisi.']);
+        }
+
+        try {
+            $cfg = \App\Services\Ai\AiClientFactory::config();
+            $res = \App\Services\Ai\AiClientFactory::make()->chat(
+                'Jawab sangat singkat dalam Bahasa Indonesia.',
+                'Balas dengan satu kata: OK',
+                ['max_tokens' => 20, 'temperature' => 0],
+            );
+
+            return response()->json([
+                'ok' => true,
+                'pesan' => 'Koneksi berhasil.',
+                'jawaban' => mb_substr(trim((string) $res['content']), 0, 60),
+                'model' => $cfg['model'] ?? '',
+                'token' => $res['tokens'] ?? 0,
             ]);
-            // #endregion
-            throw $e;
+        } catch (\Throwable $e) {
+            return response()->json(['ok' => false, 'pesan' => mb_substr($e->getMessage(), 0, 250)]);
         }
     }
 
@@ -114,9 +115,7 @@ class SettingController extends Controller
             'organization_name' => ['nullable', 'string', 'max:120'],
             'organization_url' => ['nullable', 'url', 'max:255'],
             'organization_logo' => ['nullable', 'url', 'max:255'],
-            // Boleh URL penuh atau path relatif (mis. /images/hero.jpg).
             'hero_image' => ['nullable', 'string', 'max:500'],
-            // Integrasi Google/Bing (boleh tempel tag <meta> penuh; dibersihkan di bawah).
             'google_site_verification' => ['nullable', 'string', 'max:500'],
             'bing_site_verification' => ['nullable', 'string', 'max:500'],
             'google_analytics_id' => ['nullable', 'string', 'max:40'],
@@ -134,29 +133,80 @@ class SettingController extends Controller
             'image_galeri_4' => ['nullable', 'string', 'max:500'],
             'image_galeri_5' => ['nullable', 'string', 'max:500'],
             'image_galeri_6' => ['nullable', 'string', 'max:500'],
+            'home_hero_eyebrow' => ['nullable', 'string', 'max:80'],
+            'home_hero_title' => ['nullable', 'string', 'max:190'],
+            'home_hero_lead' => ['nullable', 'string', 'max:500'],
+            'home_cta_title' => ['nullable', 'string', 'max:190'],
+            'home_cta_lead' => ['nullable', 'string', 'max:500'],
+            'home_about_desc' => ['nullable', 'string', 'max:2000'],
+            'home_testi1' => ['nullable', 'string', 'max:500'],
+            'home_testi1_who' => ['nullable', 'string', 'max:120'],
+            'home_testi2' => ['nullable', 'string', 'max:500'],
+            'home_testi2_who' => ['nullable', 'string', 'max:120'],
+            'home_testi3' => ['nullable', 'string', 'max:500'],
+            'home_testi3_who' => ['nullable', 'string', 'max:120'],
+            'home_area_label' => ['nullable', 'string', 'max:80'],
+            'home_layanan_label' => ['nullable', 'string', 'max:80'],
+            'kredensial_1_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_1_label' => ['nullable', 'string', 'max:120'],
+            'kredensial_2_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_2_label' => ['nullable', 'string', 'max:120'],
+            'kredensial_3_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_3_label' => ['nullable', 'string', 'max:120'],
+            'kredensial_4_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_4_label' => ['nullable', 'string', 'max:120'],
+            'kredensial_5_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_5_label' => ['nullable', 'string', 'max:120'],
+            'kredensial_6_img' => ['nullable', 'string', 'max:500'],
+            'kredensial_6_label' => ['nullable', 'string', 'max:120'],
+            'engine_name' => ['nullable', 'string', 'max:60'],
+            'engine_logo' => ['nullable', 'string', 'max:500'],
+            'default_robots' => ['nullable', 'string', 'in:index,follow,noindex,follow,index,nofollow,noindex,nofollow'],
+            'og_image' => ['nullable', 'string', 'max:500'],
+            'og_locale' => ['nullable', 'string', 'max:10'],
+            'theme_color' => ['nullable', 'string', 'max:10'],
+            'ai_driver' => ['nullable', 'string', 'max:30'],
+            'ai_model' => ['nullable', 'string', 'max:120'],
+            'ai_base_url' => ['nullable', 'string', 'max:255'],
+            'referensi_1_label' => ['nullable', 'string', 'max:120'],
+            'referensi_1_url' => ['nullable', 'url', 'max:400'],
+            'referensi_2_label' => ['nullable', 'string', 'max:120'],
+            'referensi_2_url' => ['nullable', 'url', 'max:400'],
+            'referensi_3_label' => ['nullable', 'string', 'max:120'],
+            'referensi_3_url' => ['nullable', 'url', 'max:400'],
+            'referensi_4_label' => ['nullable', 'string', 'max:120'],
+            'referensi_4_url' => ['nullable', 'url', 'max:400'],
+            'ai_api_key' => ['nullable', 'string', 'max:300'],
         ]);
 
-        // Warna: hanya terima kode HEX yang sah (cegah penyuntikan CSS).
-        foreach (array_keys($this->colorPalette()) as $ck) {
-            if (array_key_exists($ck, $data)) {
-                $data[$ck] = $this->sanitizeColor((string) $data[$ck]);
+        $kunciBaru = trim((string) $request->input('ai_api_key', ''));
+        if ($kunciBaru === '-') {
+            \App\Services\Ai\AiClientFactory::simpanKunci('');
+        } elseif ($kunciBaru !== '') {
+            \App\Services\Ai\AiClientFactory::simpanKunci($kunciBaru);
+        }
+        unset($data['ai_api_key']);
+
+        $data['home_use_template'] = $request->boolean('home_use_template') ? '1' : null;
+        $data['theme_color'] = BrandColors::hex((string) ($data['theme_color'] ?? ''));
+
+        foreach (array_keys(BrandColors::MAP) as $key) {
+            if (array_key_exists($key, $data)) {
+                $data[$key] = BrandColors::hex((string) $data[$key]);
             }
         }
 
-        // Bersihkan input verifikasi: bila admin menempel seluruh tag
-        // <meta ... content="KODE">, ambil KODE-nya saja.
         $data['google_site_verification'] = $this->extractVerification($data['google_site_verification'] ?? null);
         $data['bing_site_verification'] = $this->extractVerification($data['bing_site_verification'] ?? null);
-        // ID GA4/GTM: buang spasi & karakter aneh.
         $data['google_analytics_id'] = $this->cleanId($data['google_analytics_id'] ?? null);
         $data['gtm_id'] = $this->cleanId($data['gtm_id'] ?? null);
 
         foreach (self::KEYS as $key) {
             if ($key === 'template_blade_enabled') {
                 Setting::put($key, $request->boolean('template_blade_enabled') ? '1' : '0');
-
                 continue;
             }
+
             Setting::put($key, $data[$key] ?? null);
         }
 
@@ -165,27 +215,19 @@ class SettingController extends Controller
         return back()->with('status', 'Pengaturan disimpan.');
     }
 
-    /**
-     * Ambil kode verifikasi. Bila admin menempel seluruh tag
-     * <meta name="..." content="KODE">, kembalikan KODE saja; jika sudah berupa
-     * kode polos, kembalikan apa adanya (di-trim).
-     */
     private function extractVerification(?string $raw): ?string
     {
         $raw = trim((string) $raw);
         if ($raw === '') {
             return null;
         }
-        if (preg_match('/content\s*=\s*["\']([^"\']+)["\']/i', $raw, $m)) {
+        if (preg_match("/content\\s*=\\s*[\"']([^\"']+)[\"']/i", $raw, $m)) {
             return trim($m[1]);
         }
 
         return $raw;
     }
 
-    /**
-     * Bersihkan ID GA4/GTM: hanya izinkan huruf, angka, dan tanda hubung.
-     */
     private function cleanId(?string $raw): ?string
     {
         $raw = trim((string) $raw);
@@ -193,76 +235,6 @@ class SettingController extends Controller
             return null;
         }
 
-        return preg_replace('/[^A-Za-z0-9\-]/', '', $raw) ?: null;
-    }
-
-    private function colorPalette(): array
-    {
-        if (class_exists(\App\Support\BrandColors::class) && defined(\App\Support\BrandColors::class . '::MAP')) {
-            /** @var array<string, array{0:string,1:string,2:string}> $map */
-            $map = \App\Support\BrandColors::MAP;
-
-            return $map;
-        }
-
-        return self::COLOR_FIELDS;
-    }
-
-    private function sanitizeColor(?string $value): ?string
-    {
-        if (class_exists(\App\Support\BrandColors::class)) {
-            return \App\Support\BrandColors::hex((string) $value);
-        }
-
-        $value = trim((string) $value);
-        if ($value === '') {
-            return null;
-        }
-        if (! str_starts_with($value, '#')) {
-            $value = '#' . $value;
-        }
-
-        return preg_match('/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/', $value) === 1 ? $value : null;
-    }
-
-    private function currentColor(string $key, ?string $storedValue, string $default): string
-    {
-        if (class_exists(\App\Support\BrandColors::class)) {
-            return \App\Support\BrandColors::current($key);
-        }
-
-        return $this->sanitizeColor($storedValue) ?? $default;
-    }
-
-    private function reportDebug(string $hypothesisId, string $runId, string $message, array $data = []): void
-    {
-        $envPath = base_path('.dbg/admin-settings-500.env');
-        $url = 'http://127.0.0.1:7777/event';
-        $sessionId = 'admin-settings-500';
-
-        if (is_file($envPath)) {
-            foreach (preg_split("/\r\n|\n|\r/", (string) @file_get_contents($envPath)) as $line) {
-                if (str_starts_with($line, 'DEBUG_SERVER_URL=')) {
-                    $url = trim(substr($line, 17));
-                }
-                if (str_starts_with($line, 'DEBUG_SESSION_ID=')) {
-                    $sessionId = trim(substr($line, 17));
-                }
-            }
-        }
-
-        try {
-            Http::timeout(1)->post($url, [
-                'sessionId' => $sessionId,
-                'runId' => $runId,
-                'hypothesisId' => $hypothesisId,
-                'location' => 'SettingController',
-                'msg' => $message,
-                'data' => $data,
-                'ts' => (int) round(microtime(true) * 1000),
-            ]);
-        } catch (\Throwable) {
-            // Abaikan kegagalan debug collector agar alur aplikasi tetap normal.
-        }
+        return preg_replace('/[^A-Za-z0-9\\-]/', '', $raw) ?: null;
     }
 }

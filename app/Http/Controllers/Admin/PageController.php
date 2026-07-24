@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Jobs\PublishPagesJob;
 use App\Models\ImportBatch;
 use App\Models\Page;
+use App\Models\Template;
 use App\Services\SitemapService;
 use App\Support\PublishControl;
+use App\Support\RenderCache;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -18,7 +20,7 @@ class PageController extends Controller
         $q = $request->query('q');
 
         $pages = Page::query()
-            ->with(['service:id,name', 'city:id,name'])
+            ->with(['service:id,name', 'city:id,name', 'template:id,name'])
             ->when($status, fn ($query) => $query->where('status', $status))
             ->when($q, fn ($query) => $query->where('path', 'like', '%' . $q . '%'))
             ->latest('id')
@@ -34,7 +36,64 @@ class PageController extends Controller
             'batches' => $batches,
             'publishState' => PublishControl::state(),
             'publishMeta' => PublishControl::meta(),
+            'templates' => Template::where('type', Template::TYPE_SALESPAGE)->orderBy('name')->get(['id', 'name', 'is_active']),
+            'kotaList' => \App\Models\City::orderBy('name')->get(['id', 'name']),
+            'layananList' => \App\Models\Service::orderBy('name')->get(['id', 'name']),
         ]);
+    }
+
+    public function terapkanTemplate(Request $request)
+    {
+        $data = $request->validate([
+            'template_id' => ['nullable', 'integer', 'exists:templates,id'],
+            'lingkup' => ['required', 'string', 'in:terpilih,kota,layanan,semua'],
+            'page_ids' => ['nullable', 'array'],
+            'page_ids.*' => ['integer'],
+            'city_id' => ['nullable', 'integer'],
+            'service_id' => ['nullable', 'integer'],
+        ]);
+
+        $templateId = $data['template_id'] ?: null;
+        $query = Page::query();
+        $keterangan = '';
+
+        switch ($data['lingkup']) {
+            case 'terpilih':
+                $ids = array_filter((array) ($data['page_ids'] ?? []));
+                if ($ids === []) {
+                    return back()->withErrors(['template' => 'Belum ada halaman yang dicentang.']);
+                }
+                $query->whereIn('id', $ids);
+                $keterangan = count($ids) . ' halaman terpilih';
+                break;
+            case 'kota':
+                if (empty($data['city_id'])) {
+                    return back()->withErrors(['template' => 'Pilih kota terlebih dahulu.']);
+                }
+                $query->where('city_id', $data['city_id']);
+                $keterangan = 'semua halaman di kota terpilih';
+                break;
+            case 'layanan':
+                if (empty($data['service_id'])) {
+                    return back()->withErrors(['template' => 'Pilih layanan terlebih dahulu.']);
+                }
+                $query->where('service_id', $data['service_id']);
+                $keterangan = 'semua halaman layanan terpilih';
+                break;
+            default:
+                $keterangan = 'SEMUA halaman';
+        }
+
+        $jumlah = (clone $query)->count();
+        $query->update(['template_id' => $templateId]);
+
+        RenderCache::bump();
+
+        $nama = $templateId
+            ? (string) Template::find($templateId)?->name
+            : 'template aktif (bawaan)';
+
+        return back()->with('status', "{$jumlah} halaman ({$keterangan}) kini memakai: {$nama}.");
     }
 
     public function publish(Page $page)
@@ -53,9 +112,6 @@ class PageController extends Controller
         return back()->with('status', "Halaman /{$page->path} dijadikan draft.");
     }
 
-    /**
-     * Mulai publish queue (semua draft, atau per import batch).
-     */
     public function publishQueue(Request $request)
     {
         $batchId = $request->input('import_batch_id') ?: null;

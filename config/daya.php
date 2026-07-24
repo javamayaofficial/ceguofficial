@@ -57,4 +57,12 @@ return [
     */
     'public_rate_limit' => (int) env('DAYA_PUBLIC_RATE_LIMIT', env('CEGU_PUBLIC_RATE_LIMIT', 120)),
 
+    /*
+    |--------------------------------------------------------------------------
+    | FAQ per halaman (keunikan konten)
+    |--------------------------------------------------------------------------
+    */
+    'faq_per_page' => (int) env('DAYA_FAQ_PER_PAGE', 8),
+    'faq_always' => (int) env('DAYA_FAQ_ALWAYS', 3),
+
 ];

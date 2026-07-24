@@ -79,6 +79,8 @@ return [
     | site_url    : properti GSC, mis. 'sc-domain:example.com' atau
     |               'https://example.com/'. Kosong = pakai domain aplikasi.
     */
+    'status_token' => env('STATUS_TOKEN', ''),
+
     'gsc' => [
         'credentials' => env('GSC_CREDENTIALS', ''),
         'site_url' => env('GSC_SITE_URL', ''),

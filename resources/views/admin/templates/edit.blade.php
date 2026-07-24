@@ -10,11 +10,29 @@
         .editor-tabs button{background:#e2e8f0;border:0;border-radius:6px 6px 0 0;padding:7px 14px;cursor:pointer;font-weight:600;font-size:.82rem}
         .editor-tabs button.active{background:var(--p);color:#fff}
         .pane{display:none}.pane.active{display:block}
-        .tokens code{background:#eef2ff;color:#3730a3;padding:1px 6px;border-radius:5px;margin:2px;display:inline-block;font-size:.78rem;cursor:pointer}
+        .tok{background:var(--p-soft);color:var(--p);padding:1px 6px;border-radius:5px;margin:2px;display:inline-block;font-size:.78rem;cursor:pointer}
     </style>
 @endpush
 
 @section('content')
+@if(session('periksa_template'))
+@php
+    $pr = collect(session('periksa_template'));
+    $nErr = $pr->where('level', 'error')->count();
+    $nWarn = $pr->where('level', 'warn')->count();
+@endphp
+<div class="card {{ $nErr ? 'a-bad' : ($nWarn ? 'a-warn' : 'a-info') }}">
+    <h3 style="margin-top:0">Hasil Pemeriksaan Template</h3>
+    <ul style="margin:8px 0 0;padding-left:20px;line-height:1.8;font-size:.9rem">
+        @foreach($pr as $item)
+            <li class="{{ $item['level'] === 'error' ? 't-bad' : ($item['level'] === 'warn' ? 't-warn' : 'muted') }}">
+                {{ $item['pesan'] }}
+            </li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
     <form method="POST" action="{{ $isNew ? route('admin.templates.store') : route('admin.templates.update', $template) }}" id="tplForm">
         @csrf
         @unless($isNew) @method('PUT') @endunless
@@ -22,25 +40,31 @@
         <div class="card">
             <div class="row">
                 <div style="flex:1">
+                    <label>Jenis Template</label>
+                    <select name="type" style="margin-bottom:10px">
+                        @foreach(\App\Models\Template::TYPES as $tv => $tl)
+                            <option value="{{ $tv }}" @selected(old('type', $template->type ?? \App\Models\Template::TYPE_SALESPAGE) === $tv)>{{ $tl }}</option>
+                        @endforeach
+                    </select>
                     <label>Nama Template</label>
                     <input name="name" value="{{ old('name', $template->name) }}" required>
                 </div>
                 <div style="align-self:flex-end" class="row">
                     <label class="row" style="margin:0;gap:6px"><input type="checkbox" name="activate" value="1" style="width:auto" {{ $template->is_active ? 'checked' : '' }}> Set sebagai aktif</label>
-                    <button class="btn" type="submit">💾 Simpan</button>
-                    <button class="btn gray" type="button" onclick="preview()">👁 Preview</button>
+                    <button class="btn" type="submit">Simpan</button>
+                    <button class="btn gray" type="button" onclick="preview()">Preview</button>
                 </div>
             </div>
         </div>
 
-        <div class="card tokens">
-            <strong>Token tersedia</strong> <span class="muted">(klik untuk menyalin):</span><br>
-            @php $L = '{{'; $R = '}}'; @endphp
-            @foreach(['layanan','kota','kecamatan','kelurahan','brand','wa','wa_number','wa_button','hero','hero_image','hero_image_url','hero_alt','intro','about','cta','summary','pain_point_list','solusi_list','usp_list','testimoni_list','faq','breadcrumb','internal_links','year'] as $tok)
-                @php $token = $L.$tok.$R; @endphp
-                <code onclick="navigator.clipboard.writeText('{{ $token }}')">{{ $token }}</code>
-            @endforeach
-        </div>
+        <details class="card a-info">
+            <summary style="cursor:pointer;font-weight:600">Daftar token tersedia</summary>
+            <div style="margin-top:12px;font-size:.88rem;line-height:1.9">
+                @foreach(['hero','wa','breadcrumb','intro','cta','about','summary','usp_list','pain_point_list','solusi_list','testimoni_list','faq','internal_links','layanan','kelurahan','kecamatan','kota','brand','year','katalog_layanan','kredensial','daftar_kota','daftar_layanan'] as $tok)
+                    <code class="tok" onclick="navigator.clipboard.writeText('{{ '{{'.$tok.'}}' }}')">{{ '{{'.$tok.'}}' }}</code>
+                @endforeach
+            </div>
+        </details>
 
         <div class="card">
             <div class="editor-tabs">
@@ -54,9 +78,9 @@
         </div>
     </form>
 
-    {{-- Form preview tersembunyi (buka di tab baru) --}}
     <form method="POST" action="{{ route('admin.templates.preview') }}" target="_blank" id="previewForm">
         @csrf
+        <input type="hidden" name="type" id="pv-type">
         <input type="hidden" name="content" id="pv-content">
         <input type="hidden" name="css" id="pv-css">
         <input type="hidden" name="js" id="pv-js">
@@ -75,7 +99,6 @@
         const eCss  = CodeMirror.fromTextArea(document.getElementById('ed-css'),  opt('css'));
         const eJs   = CodeMirror.fromTextArea(document.getElementById('ed-js'),   opt('javascript'));
 
-        // Tabs
         document.querySelectorAll('.editor-tabs button').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.editor-tabs button').forEach(b => b.classList.remove('active'));
@@ -86,12 +109,12 @@
             });
         });
 
-        // Sinkronkan editor ke textarea sebelum submit
         document.getElementById('tplForm').addEventListener('submit', () => {
             eHtml.save(); eCss.save(); eJs.save();
         });
 
         function preview(){
+            document.getElementById('pv-type').value = document.querySelector('select[name=\"type\"]').value;
             document.getElementById('pv-content').value = eHtml.getValue();
             document.getElementById('pv-css').value = eCss.getValue();
             document.getElementById('pv-js').value = eJs.getValue();

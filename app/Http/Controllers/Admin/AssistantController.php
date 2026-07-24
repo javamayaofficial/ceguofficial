@@ -28,7 +28,19 @@ class AssistantController extends Controller
             'configured' => AiClientFactory::isConfigured(),
             'audit' => $audit->fullAudit(),
             'knowledge' => (new KnowledgeBase())->list(),
+            'catatan' => (new KnowledgeBase())->catatan(),
         ]);
+    }
+
+    public function simpanCatatan(Request $request)
+    {
+        $data = $request->validate([
+            'catatan' => ['nullable', 'string', 'max:20000'],
+        ]);
+
+        (new KnowledgeBase())->simpanCatatan((string) ($data['catatan'] ?? ''));
+
+        return back()->with('status', 'Catatan lapangan disimpan. Asisten akan memakainya mulai percakapan berikutnya.');
     }
 
     /**

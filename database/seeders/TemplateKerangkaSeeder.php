@@ -20,14 +20,30 @@ class TemplateKerangkaSeeder extends Seeder
         '10-advertorial' => 'Advertorial — Soft selling ala artikel',
         '11-longform' => 'Long Form — Penjualan mendalam',
         '12-fsp' => 'FSP — Fakta, Story, Penawaran',
+        '01-navigasi' => 'Beranda: Navigasi — pusat penjelajahan (disarankan)',
+        '02-penjualan' => 'Beranda: Penjualan — beranda sebagai penawaran',
+        '03-ringkas' => 'Beranda: Ringkas — situs sederhana',
+        '04-korporat' => 'Beranda: Korporat — profil perusahaan',
+        '05-katalog' => 'Beranda: Katalog — produk/layanan di depan',
+        '06-cerita' => 'Beranda: Cerita — tentang kami lebih dulu',
+        '07-lokal' => 'Beranda: Lokal — wilayah layanan ditonjolkan',
+        '08-konversi' => 'Beranda: Konversi — fokus tombol WhatsApp',
+        '09-otoritas' => 'Beranda: Otoritas — kredensial di depan (hukum/kesehatan)',
+        '10-portofolio' => 'Beranda: Portofolio — galeri hasil kerja',
+        '11-edukasi' => 'Beranda: Edukasi — menjawab pertanyaan lebih dulu',
+        '12-daftar' => 'Beranda: Daftar — direktori layanan & wilayah',
     ];
 
     public function run(): void
     {
-        $dir = resource_path('templates');
+        $this->muat(resource_path('templates'), Template::TYPE_SALESPAGE);
+        $this->muat(resource_path('templates/home'), Template::TYPE_HOME);
+    }
 
+    private function muat(string $dir, string $type): void
+    {
         if (! is_dir($dir)) {
-            $this->command?->warn('Folder resources/templates tidak ditemukan.');
+            $this->command?->warn('Folder resources/templates tidak ditemukan — tidak ada yang dimuat.');
 
             return;
         }
@@ -58,12 +74,14 @@ class TemplateKerangkaSeeder extends Seeder
 
             Template::create([
                 'name' => $nama,
+                'type' => $type,
                 'content' => $isi,
                 'is_active' => false,
             ]);
             $dibuat++;
         }
 
-        $this->command?->info("Template kerangka: {$dibuat} dimuat, {$dilewati} dilewati.");
+        $label = $type === Template::TYPE_HOME ? 'beranda' : 'salespage';
+        $this->command?->info("Template {$label}: {$dibuat} dimuat, {$dilewati} dilewati (sudah ada).");
     }
 }

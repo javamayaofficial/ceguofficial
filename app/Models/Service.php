@@ -10,7 +10,7 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'is_active'];
+    protected $fillable = ['name', 'slug', 'price_from', 'description', 'image', 'sort_order', 'is_active'];
 
     protected $casts = ['is_active' => 'boolean'];
 

@@ -29,6 +29,8 @@ class KnowledgeBase
     /** Batas total karakter knowledge yang disuntik per panggilan (jaga biaya). */
     private const MAX_CHARS = 8000;
 
+    public const CATATAN = '00-catatan-lapangan.md';
+
     private string $dir;
 
     public function __construct(?string $dir = null)
@@ -62,6 +64,25 @@ class KnowledgeBase
         usort($out, fn ($a, $b) => strcmp($a['file'], $b['file']));
 
         return $out;
+    }
+
+    public function catatan(): string
+    {
+        $path = $this->dir . '/' . self::CATATAN;
+
+        return File::exists($path) ? trim($this->parse(File::get($path))['isi']) : '';
+    }
+
+    public function simpanCatatan(string $isi): bool
+    {
+        if (! File::isDirectory($this->dir)) {
+            File::makeDirectory($this->dir, 0755, true);
+        }
+
+        $head = "---\njudul: Catatan Lapangan (pengamatan nyata dari situs ini)\n"
+            . "pemicu:\nselalu: true\nprioritas: 0\n---\n";
+
+        return File::put($this->dir . '/' . self::CATATAN, $head . trim($isi) . "\n") !== false;
     }
 
     /**
